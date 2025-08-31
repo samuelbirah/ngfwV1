@@ -1,4 +1,3 @@
-```markdown
 # 🔥 NGFW Congo - Pare-feu Nouvelle Génération avec IA Comportementale
 
 **Un pare-feu autonome et intelligent conçu pour la détection proactive des cybermenaces dans les réseaux d'entreprise, spécialement adapté au contexte Africain.**
