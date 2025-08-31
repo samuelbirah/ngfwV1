@@ -77,7 +77,7 @@ graph TB
 
 ```bash
 # Clone du projet
-git clone https://github.com/votre-username/ngfw-congo.git
+git clone https://github.com/samuelbirah/ngfwV1.git
 cd ngfw-congo
 
 # Installation des dépendances
@@ -197,7 +197,7 @@ Nous welcome les contributions ! Voici comment aider :
 ### Guide de Contribution
 ```bash
 # Fork du projet
-git clone https://github.com/votre-username/ngfw-congo.git
+git clone https://github.com/samuelbirah/ngfwV1.git
 
 # Installation dev
 pip install -r requirements-dev.txt
@@ -240,7 +240,7 @@ Si vous utilisez NGFW Congo dans vos recherches :
   title = {NGFW Congo: Pare-feu Nouvelle Génération avec IA Comportementale},
   author = {Votre Nom},
   year = {2024},
-  url = {https://github.com/votre-username/ngfw-congo}
+  url = {https://github.com/samuelbirah/ngfwV1.git}
 }
 ```
 
