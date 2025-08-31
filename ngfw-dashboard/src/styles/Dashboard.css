@@ -1,0 +1,48 @@
+.dashboard-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.stat-card {
+  transition: transform 0.2s ease-in-out;
+  height: 140px;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-value {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.anomaly-chip {
+  background-color: #ffebee !important;
+  color: #c62828 !important;
+}
+
+.normal-chip {
+  background-color: #e8f5e8 !important;
+  color: #2e7d32 !important;
+}
+
+.MuiDataGrid-root {
+  border: none !important;
+}
+
+.MuiDataGrid-cell {
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.recharts-wrapper {
+  font-family: 'Roboto', sans-serif;
+}
