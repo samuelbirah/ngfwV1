@@ -236,25 +236,13 @@ git push origin feature/nouvelle-feature
 ### Citation
 Si vous utilisez NGFW Congo dans vos recherches :
 ```bibtex
-@software{ngfw_congo_2024,
+@software{ngfw_congo_2025,
   title = {NGFW Congo: Pare-feu Nouvelle Génération avec IA Comportementale},
-  author = {Votre Nom},
-  year = {2024},
+  author = {Samuel Biraheka},
+  year = {2025},
   url = {https://github.com/samuelbirah/ngfwV1.git}
 }
 ```
-
----
-
-## 🙏 Remerciements
-
-Ce projet a été rendu possible grâce à :
-- **Canadian Institute for Cybersecurity** pour les datasets
-- **Université de Kinshasa** pour le support académique
-- **Communauté Open Source** pour les contributions
-- **Partenaire Industriel** pour les tests en environnement réel
-
----
 
 **⭐ Star le projet sur GitHub si vous trouvez NGFW Congo utile !**
 
