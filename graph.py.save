@@ -1,0 +1,131 @@
+# Importation des bibliothèques
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, roc_curve, auc, RocCurveDisplay, precision_recall_curve, PrecisionRecallDisplay
+import numpy as np
+
+# Configuration pour des graphiques professionnels et élégants
+plt.style.use('default')  # Reset du style
+sns.set_theme(style="whitegrid")  #Style Seaborn moderne
+plt.rcParams['figure.dpi'] = 300  # Haute résolution
+plt.rcParams['savefig.bbox'] = 'tight'
+plt.rcParams['font.size'] = 9  # Police plus petite comme demandé
+plt.rcParams['font.family'] = 'DejaVu Sans'  # Police moderne et lisible
+plt.rcParams['axes.titlesize'] = 11
+plt.rcParams['axes.labelsize'] = 9
+plt.rcParams['xtick.labelsize'] = 8
+plt.rcParams['ytick.labelsize'] = 8
+
+# Données fournies
+data = """
+timestamp,src_ip,dst_ip,protocol,length,anomaly_score,is_anomaly
+2025-08-23T20:39:32.764430,192.168.178.39,224.0.0.251,17,87,0.3884532100739588,False
+2025-08-23T20:39:34.414601,192.168.178.39,224.0.0.251,17,387,0.26054444780361125,False
+2025-08-23T20:39:34.416166,192.168.178.39,224.0.0.251,17,86,0.39040812896583005,False
+2025-08-23T20:39:34.669285,192.168.178.39,224.0.0.251,17,86,0.39040812896583005,False
+2025-08-23T20:39:34.843641,192.168.178.39,239.255.255.250,17,167,0.28284254121837943,False
+2025-08-23T20:39:34.936872,192.168.178.39,224.0.0.251,17,86,0.39040812896583005,False
+2025-08-23T20:39:35.193752,192.168.178.39,224.0.0.251,17,445,0.26009028118379607,False
+2025-08-23T20:39:35.197242,192.168.178.39,224.0.0.251,17,388,0.26035430084521716,False
+2025-08-23T20:39:35.417153,192.168.178.17,224.0.0.251,17,103,0.3494968909255882,False
+2025-08-23T20:39:47.750387,192.168.178.39,192.168.178.255,17,86,0.39040812896583005,False
+2025-08-23T20:39:55.433092,192.168.178.17,224.0.0.251,17,103,0.3494968909255882,False
+2025-08-23T20:39:56.723413,192.168.178.165,192.168.178.17,17,337,0.2517233952359267,False
+2025-08-23T20:40:15.475205,192.168.178.17,224.0.0.251,17,103,0.3494968909255882,False
+2025-08-23T20:40:17.751441,192.168.178.39,192.168.178.255,17,86,0.39040812896583005,False
+2025-08-23T20:40:33.931425,192.168.178.39,239.255.255.250,17,212,0.24953110728349448,False
+2025-08-23T20:40:34.936485,192.168.178.39,239.255.255.250,17,212,0.24953110728349448,False
+2025-08-23T20:40:35.466113,192.168.178.17,224.0.0.251,17,103,0.3494968909255882,False
+2025-08-23T20:40:35.938538,192.168.178.39,239.255.255.250,17,212,0.24953110728349448,False
+2025-08-23T20:40:36.938005,192.168.178.39,239.255.255.250,17,212,0.24953110728349448,False
+2025-08-23T20:40:47.756608,192.168.178.39,192.168.178.255,17,86,0.39040812896583005,False
+2025-08-23T20:40:55.495010,192.168.178.17,224.0.0.251,17,103,0.3494968909255882,False
+2025-08-23T20:41:15.624787,192.168.178.17,224.0.0.251,17,103,0.3494968909255882,False
+2025-08-23T20:41:17.756829,192.168.178.39,192.168.178.255,17,86,0.39040812896583005,False
+2025-08-23T20:41:32.775751,192.168.178.39,224.0.0.251,17,87,0.3884532100739588,False
+2025-08-23T20:41:34.850012,192.168.178.39,239.255.255.250,17,167,0.28284254121837943,False
+2025-08-23T20:41:35.209047,192.168.178.39,224.0.0.251,17,387,0.26054444780361125,False
+2025-08-23T20:41:35.212449,192.168.178.39,224.0.0.251,17,86,0.39040812896583005,False
+"""
+
+# Chargement des données dans un DataFrame
+from io import StringIO
+df = pd.read_csv(StringIO(data))
+
+# Conversion des types
+df['timestamp'] = pd.to_datetime(df['timestamp'])
+df['is_anomaly'] = df['is_anomaly'].astype(int)  # Conversion False/True en 0/1
+
+# 1. DISTRIBUTION DES SCORES D'ANOMALIE
+print("Création de la distribution des scores...")
+fig, ax = plt.subplots(figsize=(8, 4.5))
+sns.histplot(data=df, x='anomaly_score', hue='is_anomaly', bins=20, 
+             palette={0: 'skyblue', 1: 'salmon'}, alpha=0.7, ax=ax)
+plt.title('Distribution des Scores d\'Anomalie du NGFW\n(Données Capturées)', pad=15)
+plt.xlabel('Score d\'Anomalie')
+plt.ylabel('Nombre de Connexions')
+plt.legend(title='Anomalie', labels=['Trafic Normal', 'Trafic Anormal'], loc='upper right')
+plt.savefig('distribution_scores_ngfw.png', dpi=300, bbox_inches='tight')
+plt.show()
+
+# 2. COURBE ROC (basée sur anomaly_score comme score continu)
+print("Création de la courbe ROC...")
+fpr, tpr, thresholds = roc_curve(df['is_anomaly'], df['anomaly_score'])
+roc_auc = auc(fpr, tpr)
+
+fig, ax = plt.subplots(figsize=(6, 5))
+display = RocCurveDisplay(fpr=fpr, tpr=tpr, roc_auc=roc_auc, 
+                          estimator_name='NGFW IA Comportemental')
+display.plot(ax=ax, color='#2E86AB', lw=2.5)  # Bleu élégant
+plt.plot([0, 1], [0, 1], color='#A23B72', lw=2, linestyle='--', alpha=0.8, label='Aléatoire (AUC = 0.50)')
+plt.title('Courbe ROC - Performance de Détection\n(Scores d\'Anomalie)', pad=20)
+plt.legend(loc='lower right')
+plt.savefig('courbe_roc_reelle_ngfw.png', dpi=300, bbox_inches='tight')
+plt.show()
+
+# 3. COURBE PRÉCISION-RAPPEL (Plus informative pour données déséquilibrées)
+print("Création de la courbe Précision-Rappel...")
+precision, recall, _ = precision_recall_curve(df['is_anomaly'], df['anomaly_score'])
+pr_auc = auc(recall, precision)
+
+fig, ax = plt.subplots(figsize=(6, 5))
+display = PrecisionRecallDisplay(precision=precision, recall=recall, 
+                                 estimator_name='NGFW IA Comportemental')
+display.plot(ax=ax, color='#F18F01', lw=2.5)  # Orange élégant
+plt.title('Courbe Précision-Rappel\n(Scores d\'Anomalie)', pad=20)
+plt.axhline(y=df['is_anomaly'].mean(), color='#A23B72', linestyle='--', 
+            label='Modèle Basique', alpha=0.8)
+plt.legend(loc='upper right')
+plt.savefig('courbe_precision_rappel_ngfw.png', dpi=300, bbox_inches='tight')
+plt.show()
+
+# 4. ANALYSE TEMPORELLE DES SCORES
+print("Création de l'analyse temporelle...")
+fig, ax = plt.subplots(figsize=(10, 4))
+scatter = ax.scatter(df['timestamp'], df['anomaly_score'], 
+                     c=df['is_anomaly'], cmap='coolwarm', alpha=0.7, s=30)
+plt.colorbar(scatter, label='Anomalie (0=Normal, 1=Anormal)')
+plt.title('Évolution Temporelle des Scores d\'Anomalie', pad=15)
+plt.xlabel('Temps')
+plt.ylabel('Score d\'Anomalie')
+plt.xticks(rotation=45)
+plt.savefig('evolution_temporelle_scores.png', dpi=300, bbox_inches='tight')
+plt.show()
+
+# 5. STATISTIQUES DES DONNÉES
+print("\n=== ANALYSE DES DONNÉES RÉELLES ===")
+print(f"• Période analysée: {df['timestamp'].min()} to {df['timestamp'].max()}")
+print(f"• Nombre total de connexions: {len(df)}")
+print(f"• Nombre d'anomalies détectées: {df['is_anomaly'].sum()}")
+print(f"• Pourcentage d'anomalies: {df['is_anomaly'].mean()*100:.1f}%")
+print(f"• Score d'anomalie moyen: {df['anomaly_score'].mean():.3f}")
+print(f"• Score d'anomalie médian: {df['anomaly_score'].median():.3f}")
+print(f"• AUC ROC: {roc_auc:.3f}")
+print(f"• AUC Précision-Rappel: {pr_auc:.3f}")
+
+print("\nGraphiques sauvegardés:")
+print("- distribution_scores_ngfw.png")
+print("- courbe_roc_reelle_ngfw.png") 
+print("- courbe_precision_rappel_ngfw.png")
+print("- evolution_temporelle_scores.png")

@@ -5,10 +5,11 @@ global:
 scrape_configs:
   - job_name: 'ngfw-congo'
     static_configs:
-      - targets: ['host.docker.internal:8000']  # Votre API
+      - targets: ['localhost:8000']  # Votre API
     metrics_path: '/metrics'
     scrape_interval: 5s
 
   - job_name: 'node-exporter'
     static_configs:
-      - targets: ['10.55.205.200:9100']  # Métriques système
+      - targets: ['localhost:9100']  # Métriques système
+    scrape_interval: 5s

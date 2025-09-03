@@ -2,6 +2,19 @@
 """
 Script Principal NGFW-Congo - Orchestre capture, extraction et détection.
 """
+# CONFIGURATION DU LOGGING - DOIT ÊTRE LA PREMIÈRE CHOSE
+import logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('ngfw_congo.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger('NGFW-Main')
+logger.info("🛠️ DEBUT DE L'IMPORT DES MODULES")  
+
 
 import time
 import json
@@ -13,17 +26,6 @@ import logging
 import threading
 from queue import Queue
 from api import log_event, update_stats
-
-# Configuration du logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('ngfw_congo.log'),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger('NGFW-Main')
 
 # File d'attente pour passer les features du thread de capture au thread de détection
 features_queue = Queue(maxsize=1000)
