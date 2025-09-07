@@ -53,10 +53,10 @@ data/*.db
 *.dump
 
 # 📝 Logs
-*.log
-logs/
-ngfw_congo.log
-logstash.db
+# *.log
+# logs/
+# ngfw_congo.log
+# logstash.db
 
 # 🔧 IDE
 .vscode/
