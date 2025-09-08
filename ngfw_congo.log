@@ -7146,3 +7146,551 @@
   "Flow Bytes/s": 26462.395543175488,
   "Flow Packets/s": 174.09470752089135
 }
+2025-09-07 23:23:57,569 - NGFW-Main - INFO - 📊 STATS - Uptime: 1h45m1s | Paquets: 43436 | Flux: 1060 | Anomalies: 25
+2025-09-07 23:23:57,577 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.093665,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 90,
+  "TotLen Bwd Pkts": 90,
+  "Flow Bytes/s": 1921.7423797576469,
+  "Flow Packets/s": 21.3526931084183
+}
+2025-09-07 23:24:35,446 - NGFW-Main - WARNING - 🚨 ANOMALIE DÉTECTÉE! Score: -0.312
+2025-09-07 23:24:35,466 - NGFW-Main - WARNING -    Détails du flux: {
+  "Duration": 133.510682,
+  "Tot Fwd Pkts": 3335,
+  "Tot Bwd Pkts": 3320,
+  "TotLen Fwd Pkts": 301358,
+  "TotLen Bwd Pkts": 304980,
+  "Flow Bytes/s": 4541.494290322028,
+  "Flow Packets/s": 49.84619882325221
+}
+2025-09-07 23:24:35,474 - NGFW-Main - WARNING -    Résultat complet: {
+  "anomaly_score": -0.31244098705977985,
+  "is_anomaly": true,
+  "decision_threshold": -0.2
+}
+2025-09-07 23:24:42,456 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 14.526365,
+  "Tot Fwd Pkts": 2,
+  "Tot Bwd Pkts": 2,
+  "TotLen Fwd Pkts": 120,
+  "TotLen Bwd Pkts": 120,
+  "Flow Bytes/s": 16.52168316024002,
+  "Flow Packets/s": 0.2753613860040003
+}
+2025-09-07 23:25:05,437 - NGFW-Main - WARNING - 🚨 ANOMALIE DÉTECTÉE! Score: -0.249
+2025-09-07 23:25:05,639 - NGFW-Main - WARNING -    Détails du flux: {
+  "Duration": 10.392325,
+  "Tot Fwd Pkts": 271,
+  "Tot Bwd Pkts": 273,
+  "TotLen Fwd Pkts": 24228,
+  "TotLen Bwd Pkts": 25982,
+  "Flow Bytes/s": 4831.450132670024,
+  "Flow Packets/s": 52.3463228873231
+}
+2025-09-07 23:25:05,644 - NGFW-Main - WARNING -    Résultat complet: {
+  "anomaly_score": -0.24937329448498158,
+  "is_anomaly": true,
+  "decision_threshold": -0.2
+}
+2025-09-07 23:25:05,717 - NGFW-Main - INFO - 📊 STATS - Uptime: 1h46m9s | Paquets: 45615 | Flux: 1070 | Anomalies: 27
+2025-09-07 23:25:05,724 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 4.235487,
+  "Tot Fwd Pkts": 42,
+  "Tot Bwd Pkts": 58,
+  "TotLen Fwd Pkts": 39735,
+  "TotLen Bwd Pkts": 7370,
+  "Flow Bytes/s": 11121.507396906189,
+  "Flow Packets/s": 23.610035870727497
+}
+2025-09-07 23:26:28,086 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.016704,
+  "Tot Fwd Pkts": 2,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 396,
+  "TotLen Bwd Pkts": 60,
+  "Flow Bytes/s": 27298.850574712644,
+  "Flow Packets/s": 179.5977011494253
+}
+2025-09-07 23:27:25,461 - NGFW-Main - INFO - 📊 STATS - Uptime: 1h48m29s | Paquets: 45770 | Flux: 1080 | Anomalies: 27
+2025-09-07 23:27:35,414 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 156.778353,
+  "Tot Fwd Pkts": 12,
+  "Tot Bwd Pkts": 13,
+  "TotLen Fwd Pkts": 684,
+  "TotLen Bwd Pkts": 780,
+  "Flow Bytes/s": 9.338023853331332,
+  "Flow Packets/s": 0.15946078984513887
+}
+2025-09-07 23:29:00,665 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.017168,
+  "Tot Fwd Pkts": 2,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 396,
+  "TotLen Bwd Pkts": 60,
+  "Flow Bytes/s": 26561.043802423115,
+  "Flow Packets/s": 174.74370922646784
+}
+2025-09-07 23:29:55,448 - NGFW-Main - INFO - 📊 STATS - Uptime: 1h50m59s | Paquets: 45972 | Flux: 1090 | Anomalies: 27
+2025-09-07 23:30:12,687 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 14.288969,
+  "Tot Fwd Pkts": 6,
+  "Tot Bwd Pkts": 3,
+  "TotLen Fwd Pkts": 1092,
+  "TotLen Bwd Pkts": 180,
+  "Flow Bytes/s": 89.01971863750282,
+  "Flow Packets/s": 0.629856499793652
+}
+2025-09-07 23:30:46,646 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.076321,
+  "Tot Fwd Pkts": 10,
+  "Tot Bwd Pkts": 5,
+  "TotLen Fwd Pkts": 1756,
+  "TotLen Bwd Pkts": 300,
+  "Flow Bytes/s": 26938.85038193944,
+  "Flow Packets/s": 196.53830531570603
+}
+2025-09-07 23:31:46,231 - NGFW-Main - INFO - 📊 STATS - Uptime: 1h52m50s | Paquets: 46136 | Flux: 1100 | Anomalies: 27
+2025-09-07 23:32:00,325 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.094699,
+  "Tot Fwd Pkts": 3,
+  "Tot Bwd Pkts": 3,
+  "TotLen Fwd Pkts": 186,
+  "TotLen Bwd Pkts": 186,
+  "Flow Bytes/s": 3928.235778624906,
+  "Flow Packets/s": 63.35864159072429
+}
+2025-09-07 23:33:15,985 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 60.485868,
+  "Tot Fwd Pkts": 8,
+  "Tot Bwd Pkts": 7,
+  "TotLen Fwd Pkts": 1137,
+  "TotLen Bwd Pkts": 822,
+  "Flow Bytes/s": 32.38773063486499,
+  "Flow Packets/s": 0.24799181190555122
+}
+2025-09-07 23:33:45,471 - NGFW-Main - INFO - 📊 STATS - Uptime: 1h54m49s | Paquets: 46340 | Flux: 1110 | Anomalies: 27
+2025-09-07 23:33:45,476 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 1.259202,
+  "Tot Fwd Pkts": 17,
+  "Tot Bwd Pkts": 19,
+  "TotLen Fwd Pkts": 1698,
+  "TotLen Bwd Pkts": 8466,
+  "Flow Bytes/s": 8071.778793235716,
+  "Flow Packets/s": 28.589535277104073
+}
+2025-09-07 23:34:55,432 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.041355,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 306,
+  "TotLen Bwd Pkts": 60,
+  "Flow Bytes/s": 8850.199492201667,
+  "Flow Packets/s": 48.361745859025504
+}
+2025-09-07 23:35:46,693 - NGFW-Main - INFO - 📊 STATS - Uptime: 1h56m50s | Paquets: 46494 | Flux: 1120 | Anomalies: 27
+2025-09-07 23:36:00,511 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 14.187492,
+  "Tot Fwd Pkts": 2,
+  "Tot Bwd Pkts": 2,
+  "TotLen Fwd Pkts": 120,
+  "TotLen Bwd Pkts": 120,
+  "Flow Bytes/s": 16.916309098183103,
+  "Flow Packets/s": 0.2819384849697184
+}
+2025-09-07 23:37:26,520 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.043198,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 306,
+  "TotLen Bwd Pkts": 60,
+  "Flow Bytes/s": 8472.614472892263,
+  "Flow Packets/s": 46.298439742580676
+}
+2025-09-07 23:37:48,302 - NGFW-Main - INFO - 📊 STATS - Uptime: 1h58m52s | Paquets: 46664 | Flux: 1130 | Anomalies: 27
+2025-09-07 23:38:05,417 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 107.036797,
+  "Tot Fwd Pkts": 9,
+  "Tot Bwd Pkts": 10,
+  "TotLen Fwd Pkts": 510,
+  "TotLen Bwd Pkts": 600,
+  "Flow Bytes/s": 10.370265470481145,
+  "Flow Packets/s": 0.1775090485938214
+}
+2025-09-07 23:39:05,485 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 1800.022499,
+  "Tot Fwd Pkts": 365,
+  "Tot Bwd Pkts": 614,
+  "TotLen Fwd Pkts": 21900,
+  "TotLen Bwd Pkts": 86852,
+  "Flow Bytes/s": 60.41702259856031,
+  "Flow Packets/s": 0.5438820906649123
+}
+2025-09-07 23:39:05,596 - NGFW-Main - WARNING - 🚨 ANOMALIE DÉTECTÉE! Score: -0.270
+2025-09-07 23:39:05,649 - NGFW-Main - WARNING -    Détails du flux: {
+  "Duration": 1800.022499,
+  "Tot Fwd Pkts": 365,
+  "Tot Bwd Pkts": 614,
+  "TotLen Fwd Pkts": 21900,
+  "TotLen Bwd Pkts": 86852,
+  "Flow Bytes/s": 60.41702259856031,
+  "Flow Packets/s": 0.5438820906649123
+}
+2025-09-07 23:39:05,669 - NGFW-Main - WARNING -    Résultat complet: {
+  "anomaly_score": -0.2698785190004176,
+  "is_anomaly": true,
+  "decision_threshold": -0.2
+}
+2025-09-07 23:40:00,434 - NGFW-Main - INFO - 📊 STATS - Uptime: 2h1m4s | Paquets: 46881 | Flux: 1140 | Anomalies: 28
+2025-09-07 23:40:00,442 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.622482,
+  "Tot Fwd Pkts": 8,
+  "Tot Bwd Pkts": 8,
+  "TotLen Fwd Pkts": 1927,
+  "TotLen Bwd Pkts": 1329,
+  "Flow Bytes/s": 5230.673336739054,
+  "Flow Packets/s": 25.703554480290194
+}
+2025-09-07 23:40:56,204 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.150324,
+  "Tot Fwd Pkts": 2,
+  "Tot Bwd Pkts": 2,
+  "TotLen Fwd Pkts": 147,
+  "TotLen Bwd Pkts": 153,
+  "Flow Bytes/s": 1995.6893110880496,
+  "Flow Packets/s": 26.60919081450733
+}
+2025-09-07 23:41:46,243 - NGFW-Main - INFO - 📊 STATS - Uptime: 2h2m50s | Paquets: 47065 | Flux: 1150 | Anomalies: 28
+2025-09-07 23:41:55,413 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.093919,
+  "Tot Fwd Pkts": 2,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 147,
+  "TotLen Bwd Pkts": 93,
+  "Flow Bytes/s": 2555.393477358149,
+  "Flow Packets/s": 31.94241846697686
+}
+2025-09-07 23:42:41,909 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 6.115838,
+  "Tot Fwd Pkts": 4,
+  "Tot Bwd Pkts": 3,
+  "TotLen Fwd Pkts": 784,
+  "TotLen Bwd Pkts": 180,
+  "Flow Bytes/s": 157.62353417471164,
+  "Flow Packets/s": 1.1445692315591094
+}
+2025-09-07 23:43:35,443 - NGFW-Main - INFO - 📊 STATS - Uptime: 2h4m39s | Paquets: 47226 | Flux: 1160 | Anomalies: 28
+2025-09-07 23:43:51,216 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.061709,
+  "Tot Fwd Pkts": 5,
+  "Tot Bwd Pkts": 3,
+  "TotLen Fwd Pkts": 778,
+  "TotLen Bwd Pkts": 180,
+  "Flow Bytes/s": 15524.477790921908,
+  "Flow Packets/s": 129.6407331183458
+}
+2025-09-07 23:44:56,587 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.059393,
+  "Tot Fwd Pkts": 3,
+  "Tot Bwd Pkts": 2,
+  "TotLen Fwd Pkts": 478,
+  "TotLen Bwd Pkts": 120,
+  "Flow Bytes/s": 10068.526594043069,
+  "Flow Packets/s": 84.18500496691529
+}
+2025-09-07 23:45:35,434 - NGFW-Main - INFO - 📊 STATS - Uptime: 2h6m39s | Paquets: 47418 | Flux: 1170 | Anomalies: 28
+2025-09-07 23:45:55,417 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 4.199895,
+  "Tot Fwd Pkts": 5,
+  "Tot Bwd Pkts": 3,
+  "TotLen Fwd Pkts": 1002,
+  "TotLen Bwd Pkts": 180,
+  "Flow Bytes/s": 281.4356073187544,
+  "Flow Packets/s": 1.9048095250000299
+}
+2025-09-07 23:47:20,414 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.052427,
+  "Tot Fwd Pkts": 3,
+  "Tot Bwd Pkts": 2,
+  "TotLen Fwd Pkts": 478,
+  "TotLen Bwd Pkts": 120,
+  "Flow Bytes/s": 11406.336429702253,
+  "Flow Packets/s": 95.37070593396533
+}
+2025-09-07 23:48:20,439 - NGFW-Main - INFO - 📊 STATS - Uptime: 2h9m24s | Paquets: 47616 | Flux: 1180 | Anomalies: 28
+2025-09-07 23:48:40,413 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.022376,
+  "Tot Fwd Pkts": 4,
+  "Tot Bwd Pkts": 2,
+  "TotLen Fwd Pkts": 696,
+  "TotLen Bwd Pkts": 120,
+  "Flow Bytes/s": 36467.64390418305,
+  "Flow Packets/s": 268.1444404719342
+}
+2025-09-07 23:49:50,429 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.000337,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 60,
+  "TotLen Bwd Pkts": 66,
+  "Flow Bytes/s": 373887.2403560831,
+  "Flow Packets/s": 5934.718100890208
+}
+2025-09-07 23:50:30,443 - NGFW-Main - INFO - 📊 STATS - Uptime: 2h11m34s | Paquets: 47808 | Flux: 1190 | Anomalies: 28
+2025-09-07 23:50:30,450 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.115108,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 82,
+  "TotLen Bwd Pkts": 98,
+  "Flow Bytes/s": 1563.7488271883797,
+  "Flow Packets/s": 17.374986968759774
+}
+2025-09-07 23:51:29,273 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.085688,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 54,
+  "TotLen Bwd Pkts": 60,
+  "Flow Bytes/s": 1330.407991784147,
+  "Flow Packets/s": 23.340491083932406
+}
+2025-09-07 23:52:16,492 - NGFW-Main - INFO - 📊 STATS - Uptime: 2h13m20s | Paquets: 47975 | Flux: 1200 | Anomalies: 28
+2025-09-07 23:52:31,733 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.063712,
+  "Tot Fwd Pkts": 3,
+  "Tot Bwd Pkts": 2,
+  "TotLen Fwd Pkts": 606,
+  "TotLen Bwd Pkts": 120,
+  "Flow Bytes/s": 11395.027624309392,
+  "Flow Packets/s": 78.47815168257156
+}
+2025-09-07 23:53:57,964 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.041237,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 306,
+  "TotLen Bwd Pkts": 60,
+  "Flow Bytes/s": 8875.52440769212,
+  "Flow Packets/s": 48.50013337536678
+}
+2025-09-07 23:54:15,134 - NGFW-Main - INFO - 📊 STATS - Uptime: 2h15m19s | Paquets: 48344 | Flux: 1210 | Anomalies: 28
+2025-09-07 23:54:15,280 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 148.929504,
+  "Tot Fwd Pkts": 15,
+  "Tot Bwd Pkts": 14,
+  "TotLen Fwd Pkts": 1557,
+  "TotLen Bwd Pkts": 1224,
+  "Flow Bytes/s": 18.67326436540069,
+  "Flow Packets/s": 0.19472300129328302
+}
+2025-09-07 23:54:29,489 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.317079,
+  "Tot Fwd Pkts": 7,
+  "Tot Bwd Pkts": 5,
+  "TotLen Fwd Pkts": 1046,
+  "TotLen Bwd Pkts": 415,
+  "Flow Bytes/s": 4607.684520261512,
+  "Flow Packets/s": 37.84545807196314
+}
+2025-09-07 23:54:30,649 - NGFW-Main - INFO - 📊 STATS - Uptime: 2h15m34s | Paquets: 50333 | Flux: 1220 | Anomalies: 28
+2025-09-07 23:54:30,673 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.175102,
+  "Tot Fwd Pkts": 4,
+  "Tot Bwd Pkts": 3,
+  "TotLen Fwd Pkts": 1009,
+  "TotLen Bwd Pkts": 2456,
+  "Flow Bytes/s": 19788.46615115761,
+  "Flow Packets/s": 39.9766992952679
+}
+2025-09-07 23:54:42,632 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 29.042681,
+  "Tot Fwd Pkts": 46,
+  "Tot Bwd Pkts": 0,
+  "TotLen Fwd Pkts": 6800,
+  "TotLen Bwd Pkts": 0,
+  "Flow Bytes/s": 234.1381637597438,
+  "Flow Packets/s": 1.583875813668855
+}
+2025-09-07 23:54:45,821 - NGFW-Main - INFO - 📊 STATS - Uptime: 2h15m49s | Paquets: 52721 | Flux: 1230 | Anomalies: 28
+2025-09-07 23:55:01,512 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.0,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 0,
+  "TotLen Fwd Pkts": 314,
+  "TotLen Bwd Pkts": 0,
+  "Flow Bytes/s": 0,
+  "Flow Packets/s": 0
+}
+2025-09-08 08:41:42,353 - NGFW-Main - WARNING - 🚨 ANOMALIE DÉTECTÉE! Score: -0.239
+2025-09-08 08:41:42,393 - NGFW-Main - WARNING -    Détails du flux: {
+  "Duration": 941.078167,
+  "Tot Fwd Pkts": 330,
+  "Tot Bwd Pkts": 192,
+  "TotLen Fwd Pkts": 46384,
+  "TotLen Bwd Pkts": 11604,
+  "Flow Bytes/s": 61.61868592154896,
+  "Flow Packets/s": 0.5546829352805503
+}
+2025-09-08 08:41:42,393 - NGFW-Main - WARNING -    Résultat complet: {
+  "anomaly_score": -0.23904601667109748,
+  "is_anomaly": true,
+  "decision_threshold": -0.2
+}
+2025-09-08 08:41:42,437 - NGFW-Main - WARNING - 🚨 ANOMALIE DÉTECTÉE! Score: -0.325
+2025-09-08 08:41:42,454 - NGFW-Main - WARNING -    Détails du flux: {
+  "Duration": 39.259648,
+  "Tot Fwd Pkts": 2600,
+  "Tot Bwd Pkts": 2605,
+  "TotLen Fwd Pkts": 1834935,
+  "TotLen Bwd Pkts": 717375,
+  "Flow Bytes/s": 65011.026079500254,
+  "Flow Packets/s": 132.57887589822508
+}
+2025-09-08 08:41:42,454 - NGFW-Main - WARNING -    Résultat complet: {
+  "anomaly_score": -0.3246245395654964,
+  "is_anomaly": true,
+  "decision_threshold": -0.2
+}
+2025-09-08 08:41:42,461 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 7.844159,
+  "Tot Fwd Pkts": 2,
+  "Tot Bwd Pkts": 3,
+  "TotLen Fwd Pkts": 108,
+  "TotLen Bwd Pkts": 180,
+  "Flow Bytes/s": 36.71521701689117,
+  "Flow Packets/s": 0.6374169620988049
+}
+2025-09-08 08:41:42,563 - NGFW-Main - INFO - 📊 STATS - Uptime: 11h2m46s | Paquets: 53769 | Flux: 1240 | Anomalies: 30
+2025-09-08 08:41:42,563 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.452719,
+  "Tot Fwd Pkts": 2,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 174,
+  "TotLen Bwd Pkts": 54,
+  "Flow Bytes/s": 503.6236605929948,
+  "Flow Packets/s": 6.626627113065721
+}
+2025-09-08 08:41:42,666 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.029746,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 85,
+  "TotLen Bwd Pkts": 169,
+  "Flow Bytes/s": 8538.963221945807,
+  "Flow Packets/s": 67.23593088146305
+}
+2025-09-08 08:42:02,906 - NGFW-Main - INFO - 📊 STATS - Uptime: 11h3m6s | Paquets: 55815 | Flux: 1250 | Anomalies: 30
+2025-09-08 08:42:02,906 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 2.589851,
+  "Tot Fwd Pkts": 223,
+  "Tot Bwd Pkts": 391,
+  "TotLen Fwd Pkts": 12827,
+  "TotLen Bwd Pkts": 966491,
+  "Flow Bytes/s": 378136.8117316402,
+  "Flow Packets/s": 237.07927598923646
+}
+2025-09-08 08:42:02,926 - NGFW-Main - WARNING - 🚨 ANOMALIE DÉTECTÉE! Score: -0.292
+2025-09-08 08:42:02,960 - NGFW-Main - WARNING -    Détails du flux: {
+  "Duration": 2.589851,
+  "Tot Fwd Pkts": 223,
+  "Tot Bwd Pkts": 391,
+  "TotLen Fwd Pkts": 12827,
+  "TotLen Bwd Pkts": 966491,
+  "Flow Bytes/s": 378136.8117316402,
+  "Flow Packets/s": 237.07927598923646
+}
+2025-09-08 08:42:02,960 - NGFW-Main - WARNING -    Résultat complet: {
+  "anomaly_score": -0.2918064567570018,
+  "is_anomaly": true,
+  "decision_threshold": -0.2
+}
+2025-09-08 08:42:03,034 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.495719,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 92,
+  "TotLen Bwd Pkts": 175,
+  "Flow Bytes/s": 538.6115924545962,
+  "Flow Packets/s": 4.034543763704841
+}
+2025-09-08 08:42:13,651 - NGFW-Main - WARNING - 🚨 ANOMALIE DÉTECTÉE! Score: -0.297
+2025-09-08 08:42:13,684 - NGFW-Main - WARNING -    Détails du flux: {
+  "Duration": 10.484797,
+  "Tot Fwd Pkts": 281,
+  "Tot Bwd Pkts": 433,
+  "TotLen Fwd Pkts": 18572,
+  "TotLen Bwd Pkts": 1587983,
+  "Flow Bytes/s": 153227.09633767826,
+  "Flow Packets/s": 68.09860028763552
+}
+2025-09-08 08:42:13,684 - NGFW-Main - WARNING -    Résultat complet: {
+  "anomaly_score": -0.29664269512590147,
+  "is_anomaly": true,
+  "decision_threshold": -0.2
+}
+2025-09-08 08:42:13,684 - NGFW-Main - INFO - 📊 STATS - Uptime: 11h3m17s | Paquets: 55818 | Flux: 1260 | Anomalies: 32
+2025-09-08 08:42:13,684 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.214655,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 86,
+  "TotLen Bwd Pkts": 166,
+  "Flow Bytes/s": 1173.9768465677482,
+  "Flow Packets/s": 9.317276560061494
+}
+2025-09-08 08:42:13,859 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.152635,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 85,
+  "TotLen Bwd Pkts": 165,
+  "Flow Bytes/s": 1637.8943230582763,
+  "Flow Packets/s": 13.10315458446621
+}
+2025-09-08 08:42:13,938 - NGFW-Main - WARNING - 🚨 ANOMALIE DÉTECTÉE! Score: -0.284
+2025-09-08 08:42:13,980 - NGFW-Main - WARNING -    Détails du flux: {
+  "Duration": 7.160144,
+  "Tot Fwd Pkts": 185,
+  "Tot Bwd Pkts": 359,
+  "TotLen Fwd Pkts": 11343,
+  "TotLen Bwd Pkts": 912152,
+  "Flow Bytes/s": 128977.1546494037,
+  "Flow Packets/s": 75.97612561981994
+}
+2025-09-08 08:42:13,980 - NGFW-Main - WARNING -    Résultat complet: {
+  "anomaly_score": -0.2836378104589006,
+  "is_anomaly": true,
+  "decision_threshold": -0.2
+}
+2025-09-08 08:42:14,021 - NGFW-Main - INFO - 📊 STATS - Uptime: 11h3m18s | Paquets: 55819 | Flux: 1270 | Anomalies: 33
+2025-09-08 08:42:14,021 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.0,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 0,
+  "TotLen Fwd Pkts": 74,
+  "TotLen Bwd Pkts": 0,
+  "Flow Bytes/s": 0,
+  "Flow Packets/s": 0
+}
+2025-09-08 08:42:39,590 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 2.026752,
+  "Tot Fwd Pkts": 3,
+  "Tot Bwd Pkts": 0,
+  "TotLen Fwd Pkts": 222,
+  "TotLen Bwd Pkts": 0,
+  "Flow Bytes/s": 109.53486169003409,
+  "Flow Packets/s": 1.4802008336491095
+}
+2025-09-08 08:43:10,948 - NGFW-Main - INFO - 📊 STATS - Uptime: 11h4m14s | Paquets: 89423 | Flux: 1280 | Anomalies: 33
+2025-09-08 08:43:13,880 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.0,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 0,
+  "TotLen Fwd Pkts": 74,
+  "TotLen Bwd Pkts": 0,
+  "Flow Bytes/s": 0,
+  "Flow Packets/s": 0
+}
