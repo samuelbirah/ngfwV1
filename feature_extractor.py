@@ -162,24 +162,42 @@ def packet_to_features(packet):
     """
     expired_flows = flow_gen.process_packet(packet)
 
-    features_list = []
-    for flow_id, flow_data in expired_flows:
-        # Calcule la durée du flux
-        duration = (flow_data['Last Seen'] - flow_data['Start Time']).total_seconds()
+    def packet_to_features(packet):
+        """
+        Fonction principale appelée pour chaque paquet.
+        Reçoit un paquet, le donne au générateur de flux.
+        Si le paquet a provoqué l'expiration d'un flux, on retourne les features de ce flux.
+        """
+        expired_flows = flow_gen.process_packet(packet)
 
-        # Crée un dictionnaire de features pour ce flux
-        flow_features = {
-            'Duration': duration,
-            'Tot Fwd Pkts': flow_data['Fwd Packets'],
-            'Tot Bwd Pkts': flow_data['Bwd Packets'],
-            'TotLen Fwd Pkts': flow_data['Fwd Bytes'],
-            'TotLen Bwd Pkts': flow_data['Bwd Bytes'],
-            'Flow Bytes/s': (flow_data['Fwd Bytes'] + flow_data['Bwd Bytes']) / duration if duration > 0 else 0,
-            'Flow Packets/s': (flow_data['Fwd Packets'] + flow_data['Bwd Packets']) / duration if duration > 0 else 0,
-        }
-        features_list.append(flow_features)
+        features_list = []
+        for flow_id, flow_data in expired_flows:
+            # Calcule la durée du flux
+            duration = (flow_data['Last Seen'] - flow_data['Start Time']).total_seconds()
 
-    return features_list
+            # Crée un dictionnaire de features pour ce flux AVEC TOUTES LES INFORMATIONS
+            flow_features = {
+                # Features numériques pour le modèle IA
+                'Duration': duration,
+                'Tot Fwd Pkts': flow_data['Fwd Packets'],
+                'Tot Bwd Pkts': flow_data['Bwd Packets'],
+                'TotLen Fwd Pkts': flow_data['Fwd Bytes'],
+                'TotLen Bwd Pkts': flow_data['Bwd Bytes'],
+                'Flow Bytes/s': (flow_data['Fwd Bytes'] + flow_data['Bwd Bytes']) / duration if duration > 0 else 0,
+                'Flow Packets/s': (flow_data['Fwd Packets'] + flow_data['Bwd Packets']) / duration if duration > 0 else 0,
+                
+                # Informations critiques pour le logging et blocage (DOIT ÊTRE INCLUS)
+                'Src IP': flow_data['Src IP'],
+                'Dst IP': flow_data['Dst IP'], 
+                'Protocol': flow_data['Protocol'],
+                'Src Port': flow_data['Src Port'],
+                'Dst Port': flow_data['Dst Port'],
+                'Start Time': flow_data['Start Time'].isoformat(),
+                'Last Seen': flow_data['Last Seen'].isoformat()
+            }
+            features_list.append(flow_features)
+
+        return features_list
 
 # Test simple si le script est exécuté directement
 if __name__ == "__main__":
