@@ -52,11 +52,11 @@ ngfw_congo.db
 data/*.db
 *.dump
 
-# 📝 Logs
-# *.log
-# logs/
-# ngfw_congo.log
-# logstash.db
+📝 Logs
+*.log
+logs/
+ngfw_congo.log
+logstash.db
 
 # 🔧 IDE
 .vscode/
