@@ -38,6 +38,20 @@ stats = {
     'start_time': time.time()
 }
 
+def extract_numeric_features(flow_features):
+    """
+    Extrait uniquement les features numériques pour le modèle IA
+    en conservant les informations originales pour le logging.
+    """
+    # Liste des clés à conserver (features numériques)
+    numeric_keys = [
+        'Duration', 'Tot Fwd Pkts', 'Tot Bwd Pkts', 
+        'TotLen Fwd Pkts', 'TotLen Bwd Pkts', 
+        'Flow Bytes/s', 'Flow Packets/s'
+    ]
+    
+    return {k: v for k, v in flow_features.items() if k in numeric_keys}
+
 def packet_handler(packet):
     """
     Callback appelé par Scapy pour chaque paquet capturé.
@@ -74,8 +88,11 @@ def detection_worker():
             if stats['flows_processed'] % 5 == 0:  # Log tous les 5 flux
                 logger.info(f"📋 Flux traité: {json.dumps(flow_features, indent=2)}")
             
+            # Extraire uniquement les features numériques pour le modèle IA
+            numeric_features = extract_numeric_features(flow_features)
+            
             # Fait la prédiction avec le modèle IA
-            detection_result = detect_anomaly(flow_features)
+            detection_result = detect_anomaly(numeric_features)
             
             stats['flows_processed'] += 1
             
@@ -83,22 +100,27 @@ def detection_worker():
             if detection_result.get('is_anomaly', False):
                 stats['anomalies_detected'] += 1
                 logger.warning(f"🚨 ANOMALIE DÉTECTÉE! Score: {detection_result['anomaly_score']:.3f}")
-                # Log dans la base de données
+                
+                # Log dans la base de données avec TOUTES les informations
                 log_event("anomaly", {
                     "severity": "high",
-                    "source_ip": flow_features.get('Src IP'),
-                    "destination_ip": flow_features.get('Dst IP'),
-                    "protocol": flow_features.get('Protocol'),
-                    "description": "Anomalie réseau détectée",
+                    "source_ip": flow_features.get('Src IP'),  # ← Maintenant disponible !
+                    "destination_ip": flow_features.get('Dst IP'),  # ← Maintenant disponible !
+                    "protocol": str(flow_features.get('Protocol', 'UNKNOWN')),  # ← Maintenant disponible !
+                    "description": "Anomalie réseau détectée par IA",
                     "anomaly_score": detection_result['anomaly_score'],
-                    "action_taken": "blocked" if 'Src IP' in flow_features else "logged"
+                    "action_taken": "blocked" if flow_features.get('Src IP') else "logged"
                 })
+                
                 # BLOQUAGE AUTOMATIQUE de l'IP source
-                if 'Src IP' in flow_features:
-                    src_ip = flow_features['Src IP']
-                    # Importation locale pour éviter les dépendances circulaires
-                    from blocker import blocker
-                    blocker.block_ip(src_ip, f"Anomalie détectée (score: {detection_result['anomaly_score']:.3f})")
+                src_ip = flow_features.get('Src IP')
+                if src_ip and src_ip != '0.0.0.0':
+                    try:
+                        from blocker import blocker
+                        blocker.block_ip(src_ip, f"Anomalie détectée (score: {detection_result['anomaly_score']:.3f})")
+                        logger.warning(f"🔒 IP bloquée: {src_ip}")
+                    except Exception as e:
+                        logger.error(f"Erreur lors du blocage IP {src_ip}: {e}")
                 
                 logger.warning(f"   Détails du flux: {json.dumps(flow_features, indent=2)}")
                 logger.warning(f"   Résultat complet: {json.dumps(detection_result, indent=2)}")
