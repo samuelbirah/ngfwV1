@@ -37,18 +37,50 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
   const [lastUpdate, setLastUpdate] = useState(new Date());
 
+  // Fonction fetchData :
   const fetchData = useCallback(async () => {
     try {
       setLoading(true);
       const response = await ngfwAPI.getDashboardStats();
-      setStats(response.data);
+      
+      // Transformez les données SQLite en format utilisable
+      const transformedData = {
+        total_packets: response.data.total_packets || 0,
+        total_flows: response.data.total_flows || 0,
+        total_anomalies: response.data.total_anomalies || 0,
+        total_blocks: response.data.total_blocks || 0,
+        recent_anomalies: Array.isArray(response.data.recent_anomalies) 
+          ? response.data.recent_anomalies.map(anomaly => ({
+              id: anomaly[0],
+              timestamp: anomaly[1],
+              event_type: anomaly[2],
+              severity: anomaly[3],
+              source_ip: anomaly[4],
+              destination_ip: anomaly[5],
+              protocol: anomaly[6],
+              description: anomaly[7],
+              anomaly_score: anomaly[8],
+              action_taken: anomaly[9]
+            }))
+          : [],
+        blocked_ips: Array.isArray(response.data.blocked_ips)
+          ? response.data.blocked_ips.map(ip => ({
+              id: ip[0],
+              ip_address: ip[1],
+              blocked_at: ip[2],
+              reason: ip[3],
+              expires_at: ip[4]
+            }))
+          : []
+      };
+      
+      setStats(transformedData);
       setLastUpdate(new Date());
       setError(null);
     } catch (err) {
       setError('Erreur de connexion à l\'API');
       console.error('API Error:', err);
     } finally {
-      setError(null);
       setLoading(false);
     }
   }, []);
@@ -75,6 +107,24 @@ const Dashboard = () => {
       ws.close();
     };
   }, [fetchData]);
+
+  // Test conexion
+  useEffect(() => {
+    // Test de connexion au démarrage
+    const testConnection = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/');
+        if (response.ok) {
+          console.log('✅ Connecté à l\'API');
+        } else {
+          setError('❌ API non disponible');
+        }
+      } catch (err) {
+        setError('❌ Impossible de se connecter à l\'API');
+      }
+    };
+    testConnection();
+  }, []);
 
   const StatCard = ({ icon, title, value, color, subtitle }) => (
     <Card className="stat-card" sx={{ bgcolor: color }}>

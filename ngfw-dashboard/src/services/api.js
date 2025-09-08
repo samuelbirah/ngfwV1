@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://192.168.218.200:8000';
+// Utilisez localhost ou votre IP correcte
+const API_BASE_URL = 'http://localhost:8000'; // ou 'http://192.168.x.x:8000'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -15,11 +16,14 @@ export const ngfwAPI = {
   getRecentEvents: (limit = 50) => api.get(`/events/recent?limit=${limit}`),
   
   // WebSocket pour les mises à jour temps réel
-  createWebSocket: () => new WebSocket(`ws://192.168.49.200:8000/ws/real-time`),
+  createWebSocket: () => new WebSocket(`ws://localhost:8000/ws/real-time`),
   
-  // Actions de gestion
+  // Actions de gestion (vous devez ajouter ces endpoints à votre API Python)
   blockIP: (ip, reason) => api.post('/admin/block-ip', { ip, reason }),
   unblockIP: (ip) => api.post('/admin/unblock-ip', { ip }),
+  
+  // Nouveau: Récupérer les métriques Prometheus
+  getMetrics: () => api.get('/metrics'),
 };
 
 export default api;
