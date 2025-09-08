@@ -7694,3 +7694,75 @@
   "Flow Bytes/s": 0,
   "Flow Packets/s": 0
 }
+2025-09-08 08:44:22,555 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 93.433925,
+  "Tot Fwd Pkts": 7770,
+  "Tot Bwd Pkts": 51895,
+  "TotLen Fwd Pkts": 429487,
+  "TotLen Bwd Pkts": 240998354,
+  "Flow Bytes/s": 2583941.9782482646,
+  "Flow Packets/s": 638.5796165579044
+}
+2025-09-08 08:44:22,567 - NGFW-Main - WARNING - 🚨 ANOMALIE DÉTECTÉE! Score: -0.332
+2025-09-08 08:44:22,593 - NGFW-Main - WARNING -    Détails du flux: {
+  "Duration": 93.433925,
+  "Tot Fwd Pkts": 7770,
+  "Tot Bwd Pkts": 51895,
+  "TotLen Fwd Pkts": 429487,
+  "TotLen Bwd Pkts": 240998354,
+  "Flow Bytes/s": 2583941.9782482646,
+  "Flow Packets/s": 638.5796165579044
+}
+2025-09-08 08:44:22,593 - NGFW-Main - WARNING -    Résultat complet: {
+  "anomaly_score": -0.3324726659298465,
+  "is_anomaly": true,
+  "decision_threshold": -0.2
+}
+2025-09-08 08:44:54,812 - NGFW-Main - INFO - 📊 STATS - Uptime: 11h5m58s | Paquets: 115604 | Flux: 1290 | Anomalies: 34
+2025-09-08 08:44:54,812 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.100226,
+  "Tot Fwd Pkts": 2,
+  "Tot Bwd Pkts": 2,
+  "TotLen Fwd Pkts": 151,
+  "TotLen Bwd Pkts": 183,
+  "Flow Bytes/s": 3332.4686209167285,
+  "Flow Packets/s": 39.90980384331411
+}
+2025-09-08 08:46:48,415 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.0,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 0,
+  "TotLen Fwd Pkts": 119,
+  "TotLen Bwd Pkts": 0,
+  "Flow Bytes/s": 0,
+  "Flow Packets/s": 0
+}
+2025-09-08 08:47:53,539 - NGFW-Main - INFO - 📊 STATS - Uptime: 11h8m57s | Paquets: 115705 | Flux: 1300 | Anomalies: 34
+2025-09-08 08:47:53,539 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.002413,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 70,
+  "TotLen Bwd Pkts": 70,
+  "Flow Bytes/s": 58019.06340654786,
+  "Flow Packets/s": 828.8437629506838
+}
+2025-09-08 08:50:26,632 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.08665,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 70,
+  "TotLen Bwd Pkts": 86,
+  "Flow Bytes/s": 1800.3462204270052,
+  "Flow Packets/s": 23.08136180034622
+}
+2025-09-08 08:50:58,247 - NGFW-Main - INFO - 📊 STATS - Uptime: 11h12m2s | Paquets: 115879 | Flux: 1310 | Anomalies: 34
+2025-09-08 08:51:13,318 - NGFW-Main - INFO - 📋 Flux traité: {
+  "Duration": 0.018278,
+  "Tot Fwd Pkts": 1,
+  "Tot Bwd Pkts": 1,
+  "TotLen Fwd Pkts": 70,
+  "TotLen Bwd Pkts": 70,
+  "Flow Bytes/s": 7659.48134369187,
+  "Flow Packets/s": 109.42116205274101
+}
