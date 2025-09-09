@@ -20,6 +20,7 @@ import socket
 import requests
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
 # Métriques Prometheus
@@ -381,6 +382,57 @@ async def get_cef_events(limit: int = 100):
         cef_events.append(format_cef_event(event_dict))
     
     return {"cef_events": cef_events}
+
+@app.post("/admin/block-ip")
+async def block_ip(ip_data: dict):
+    """Endpoint pour bloquer une IP manuellement"""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+        INSERT OR REPLACE INTO blocked_ips 
+        (ip_address, reason, expires_at)
+        VALUES (?, ?, datetime('now', '+1 hour'))
+        ''', (ip_data['ip'], ip_data['reason']))
+        
+        conn.commit()
+        conn.close()
+        
+        # Mettre à jour la métrique Prometheus
+        cursor.execute('SELECT COUNT(*) FROM blocked_ips WHERE expires_at > datetime("now")')
+        current_count = cursor.fetchone()[0]
+        CURRENT_BLOCKS.set(current_count)
+        
+        return {"status": "success", "ip": ip_data['ip']}
+    except Exception as e:
+        logger.error(f"Erreur blocage IP: {e}")
+        return {"status": "error", "message": str(e)}
+
+@app.post("/admin/unblock-ip")
+async def unblock_ip(ip_data: dict):
+    """Endpoint pour débloquer une IP"""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+        DELETE FROM blocked_ips 
+        WHERE ip_address = ?
+        ''', (ip_data['ip'],))
+        
+        conn.commit()
+        conn.close()
+        
+        # Mettre à jour la métrique Prometheus
+        cursor.execute('SELECT COUNT(*) FROM blocked_ips WHERE expires_at > datetime("now")')
+        current_count = cursor.fetchone()[0]
+        CURRENT_BLOCKS.set(current_count)
+        
+        return {"status": "success", "ip": ip_data['ip']}
+    except Exception as e:
+        logger.error(f"Erreur déblocage IP: {e}")
+        return {"status": "error", "message": str(e)}
 
 class SIEMExporter:
     def __init__(self, siem_host: str = "siem.company.com", siem_port: int = 514):

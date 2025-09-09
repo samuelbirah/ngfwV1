@@ -29,12 +29,13 @@ const BlockedIPs = ({ blockedIPs, onUnblock }) => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
+  // Dans BlockedIPs.js, modifiez la fonction handleUnblock :
   const handleUnblock = async (ip) => {
     setLoading(true);
     try {
       await ngfwAPI.unblockIP(ip);
       setMessage(`IP ${ip} débloquée avec succès`);
-      onUnblock();
+      onUnblock(); // Recharge les données
       setDialogOpen(false);
     } catch (error) {
       setMessage(`Erreur lors du déblocage de ${ip}`);
