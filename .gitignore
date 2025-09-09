@@ -52,7 +52,7 @@ ngfw_congo.db
 data/*.db
 *.dump
 
-📝 Logs
+# 📝 Logs
 *.log
 logs/
 ngfw_congo.log

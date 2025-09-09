@@ -7965,3 +7965,6 @@
   "Flow Bytes/s": 5.580579463981633,
   "Flow Packets/s": 0.016175592649222123
 }
+2025-09-08 19:18:25,358 - NGFW-Main - INFO - Nettoyage et arrêt...
+2025-09-08 19:18:25,426 - NGFW-Main - INFO - 📊 STATS - Uptime: 21h39m29s | Paquets: 117669 | Flux: 1418 | Anomalies: 34
+2025-09-08 19:18:25,467 - NGFW-Main - INFO - NGFW-Congo arrêté.
