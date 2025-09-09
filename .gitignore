@@ -45,12 +45,12 @@ venv.bak/
 .ipynb_checkpoints
 
 # 🗄️ Database
-*.db
-*.sqlite
-*.sqlite3
-ngfw_congo.db
-data/*.db
-*.dump
+# *.db
+# *.sqlite
+# *.sqlite3
+# ngfw_congo.db
+# data/*.db
+# *.dump
 
 # 📝 Logs
 # *.log
