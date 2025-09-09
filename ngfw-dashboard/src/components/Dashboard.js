@@ -108,24 +108,6 @@ const Dashboard = () => {
     };
   }, [fetchData]);
 
-  // Test conexion
-  useEffect(() => {
-    // Test de connexion au démarrage
-    const testConnection = async () => {
-      try {
-        const response = await fetch('http://localhost:8000/');
-        if (response.ok) {
-          console.log('✅ Connecté à l\'API');
-        } else {
-          setError('❌ API non disponible');
-        }
-      } catch (err) {
-        setError('❌ Impossible de se connecter à l\'API');
-      }
-    };
-    testConnection();
-  }, []);
-
   const StatCard = ({ icon, title, value, color, subtitle }) => (
     <Card className="stat-card" sx={{ bgcolor: color }}>
       <CardContent>

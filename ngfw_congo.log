@@ -7968,3 +7968,16 @@
 2025-09-08 19:18:25,358 - NGFW-Main - INFO - Nettoyage et arrêt...
 2025-09-08 19:18:25,426 - NGFW-Main - INFO - 📊 STATS - Uptime: 21h39m29s | Paquets: 117669 | Flux: 1418 | Anomalies: 34
 2025-09-08 19:18:25,467 - NGFW-Main - INFO - NGFW-Congo arrêté.
+2025-09-09 02:45:44,967 - NGFW-Main - INFO - 🛠️ DEBUT DE L'IMPORT DES MODULES
+2025-09-09 02:45:54,083 - NGFW-Blocker - INFO - Table et chaîne nftables initialisées.
+2025-09-09 02:45:55,143 - NGFW-Main - INFO - 🚀 Démarrage de NGFW-Congo...
+2025-09-09 02:45:55,147 - detector - INFO - Chargement du modèle depuis isolation_forest_model.pkl...
+2025-09-09 02:45:56,197 - detector - INFO - Modèle chargé avec succès.
+2025-09-09 02:45:56,204 - NGFW-Main - INFO - Détecteur initialisé avec succès.
+2025-09-09 02:45:56,205 - NGFW-Main - INFO - Bloqueur initialisé avec succès.
+2025-09-09 02:45:56,206 - NGFW-Main - INFO - Thread de détection démarré.
+2025-09-09 02:45:56,207 - NGFW-Main - INFO - Thread de détection démarré.
+2025-09-09 02:45:56,207 - NGFW-Main - INFO - Démarrage de la capture sur l'interface enp0s3...
+2025-09-09 03:11:03,386 - NGFW-Main - INFO - Nettoyage et arrêt...
+2025-09-09 03:11:03,623 - NGFW-Main - INFO - 📊 STATS - Uptime: 0h25m8s | Paquets: 32375 | Flux: 0 | Anomalies: 0
+2025-09-09 03:11:03,625 - NGFW-Main - INFO - NGFW-Congo arrêté.
